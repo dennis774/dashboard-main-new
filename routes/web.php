@@ -11,6 +11,7 @@ use App\Http\Controllers\KuwagoOne\CompareWithController;
 use App\Http\Controllers\Uddesign\UddesignController;
 use App\Http\Controllers\KuwagoOne\Kuwago_OneController;
 use App\Http\Controllers\KuwagoTwo\Kuwago_TwoController;
+use App\Http\Controllers\PromoController;
 
 Route::get('/', function () {
     return view('auth.login');
@@ -54,6 +55,7 @@ Route::middleware('auth')->group(function () {
 
 Route::middleware(['auth', 'role:owner'])->group(function(){
     Route::resource('account', AccountController::class);
+    Route::resource('promos', PromoController::class);
     Route::resource('targetSales', TargetSalesController::class);
     Route::resource('budgetAllocations',BudgetAllocationController::class);
 });

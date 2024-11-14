@@ -1,5 +1,4 @@
 <div class="container">
-<<<<<<< HEAD
     <div class="row">
         <div class="col-lg-3">.</div>
         <div class="col-lg-6 footer">
@@ -29,34 +28,6 @@
             </div>
         </div>
         <div class="col-lg-3">.</div>
-=======
-    <div class="row footer">
-        <div class="col-lg-4">
-            <button onclick="generatePDF()" class="btn btn-outline-light">Generate PDF</button>
-        </div>
-        <div class="col-lg-6">
-            <div class="dropdown">
-                <select id="dateFilter" onchange="handleFilterChange()" class="dropdownforModal">
-                    <option value="today" {{ request('interval') == 'today' ? 'selected' : '' }}>Today</option>
-                    <option value="yesterday" {{ request('interval') == 'yesterday' ? 'selected' : '' }}>Yesterday</option>
-                    <option value="last3days" {{ request('interval') == 'last3days' ? 'selected' : '' }}>Last 3 Days</option>
-                    <option value="last5days" {{ request('interval') == 'last5days' ? 'selected' : '' }}>Last 5 Days</option>
-                    <option value="lastweek" {{ request('interval') == 'lastweek' ? 'selected' : '' }}>Last Week</option>
-                    <option value="thisweek" {{ request('interval', 'thisweek') == 'thisweek' ? 'selected' : '' }}>This Week</option>
-                    <option value="thismonth" {{ request('interval') == 'thismonth' ? 'selected' : '' }}>This Month</option>
-                    <option value="lastmonth" {{ request('interval') == 'lastmonth' ? 'selected' : '' }}>Last Month</option>
-                    <option value="thisyear" {{ request('interval') == 'thisyear' ? 'selected' : '' }}>This Year</option>
-                    <option value="lastyear" {{ request('interval') == 'lastyear' ? 'selected' : '' }}>Last Year</option>
-                    <option value="overall" {{ request('interval') == 'overall' ? 'selected' : '' }}>Overall</option>
-                    <option value="custom" {{ request('interval') == 'custom' ? 'selected' : '' }}>Custom</option>
-                </select>                
-            </div>            
-        </div>
-
-        <div class="col-lg-2">
-            
-        </div>
->>>>>>> 9320a186d8d66923bf2e8b800f7599e4e2072dd8
     </div>
 
     <div class="modal-bg" id="customDateModal">
@@ -81,7 +52,6 @@
         </div>
     </div>
 </div>
-<<<<<<< HEAD
 
 <style>
 .footer {
@@ -131,5 +101,3 @@
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 </style>
-=======
->>>>>>> 9320a186d8d66923bf2e8b800f7599e4e2072dd8

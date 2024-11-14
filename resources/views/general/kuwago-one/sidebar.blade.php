@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <div class="row mt-5"></div>
                 <div class="row mt-4">  
                     <div class="col-lg-6 sidebar" style="height: 300px; background: rgba(255, 255, 255, 0.2); backdrop-filter: blur(10px); width:60px; border-radius:30px; z-index:1;">
@@ -99,24 +98,3 @@
     transform: translateX(0); 
 }
 </style>
-=======
-<div class="col-lg-12 side-bar">
-    <ul class="nav flex-column">
-        <li class="nav-item">
-            <a href="{{ route('general.kuwago-one.dashboard') }}"> <i class="fa-solid fa-border-all"></i><span></span> </a>
-        </li>
-        <li class="nav-item">
-            <a href="{{ route('general.kuwago-two.sales') }}"> <i class="fa-solid fa-chart-line"></i><span></span> </a>
-        </li>
-        <li class="nav-item">
-            <a href="{{ route('general.kuwago-two.expenses') }}"> <i class="fa-solid fa-wallet"></i><span></span> </a>
-        </li>
-        <li class="nav-item">
-            <a href="{{url('/kuwago-one/promos')}}"> <i class="fa-solid fa-tags"></i><span></span> </a>
-        </li>
-        <li class="nav-item">
-            <a href="{{url('/kuwago-one/feedbacks')}}"> <i class="fa-solid fa-star"></i><span></span> </a>
-        </li>
-    </ul>
-</div>
->>>>>>> 9320a186d8d66923bf2e8b800f7599e4e2072dd8
