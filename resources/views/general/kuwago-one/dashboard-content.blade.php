@@ -1,5 +1,12 @@
+<<<<<<< HEAD
     {{-- <div class="container text-center content-container">
         <div class="row mb-5">
+=======
+    {{-- START --}}
+    <div class="container text-center content-container">
+        <div class="row mb-5">
+            {{-- START OF SIDE BAR --}}
+>>>>>>> 9320a186d8d66923bf2e8b800f7599e4e2072dd8
             <div class="col-lg-1">
                 <div class="container">
                     <div class="row">
@@ -7,6 +14,10 @@
                     </div>
                 </div>
             </div>
+<<<<<<< HEAD
+=======
+            {{-- END OF SIDE BAR --}} {{-- START OF CONTENTS--}}
+>>>>>>> 9320a186d8d66923bf2e8b800f7599e4e2072dd8
             <div class="col-lg-11 p-3 contents">
                 <div class="container">
                     <div class="row">
@@ -84,6 +95,7 @@
                 </div>
             </div>
         </div>
+<<<<<<< HEAD
     </div> --}}
 
 
@@ -212,3 +224,9 @@
         <div class="col-lg-1"></div>
     </div>
 </div>
+=======
+        {{-- END OF CONTENTS--}}
+    </div>
+{{-- END--}}
+
+>>>>>>> 9320a186d8d66923bf2e8b800f7599e4e2072dd8

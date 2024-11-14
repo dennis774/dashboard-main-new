@@ -231,6 +231,7 @@ button.businessDelete{
     border: none;
     background: none;
  }
+<<<<<<< HEAD
 
 
 
@@ -632,3 +633,5 @@ img.profile-image {
     border-radius: 15px; /* Slightly rounded corners */
     object-fit: cover; /* Ensures the image fills the area without stretching */
 }
+=======
+>>>>>>> 9320a186d8d66923bf2e8b800f7599e4e2072dd8

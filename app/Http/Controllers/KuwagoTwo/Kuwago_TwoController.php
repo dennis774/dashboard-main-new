@@ -131,6 +131,7 @@ class Kuwago_TwoController extends Controller
         if ($interval === 'overall') {
             return $period;
         }
+<<<<<<< HEAD
     
         if ($interval === 'thisyear' || $interval === 'lastyear') {
             return Carbon::parse($period)->format('M'); // Three-letter month format
@@ -140,6 +141,17 @@ class Kuwago_TwoController extends Controller
             return Carbon::parse($period)->format('D'); // Three-letter day format
         }
     
+=======
+
+        if ($interval === 'thisyear' || $interval === 'lastyear') {
+            return Carbon::parse($period)->format('F');
+        }
+
+        if (in_array($interval, ['today', 'yesterday', 'last3days', 'last5days', 'last7days', 'thisweek', 'lastweek'])) {
+            return Carbon::parse($period)->format('l');
+        }
+
+>>>>>>> 9320a186d8d66923bf2e8b800f7599e4e2072dd8
         return Carbon::parse($period)->toDateString();
     }
     //This method filters the data by providing the start and end dates based on the selected interval.
