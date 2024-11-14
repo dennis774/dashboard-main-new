@@ -15,7 +15,7 @@ class AccountController extends Controller
     public function index()
     {
         $user['users'] = User::all();
-        return view('general.kuwago-one.dashboard', $user);
+        return view('roles.admin.account.index', $user);
     }
 
     /**
