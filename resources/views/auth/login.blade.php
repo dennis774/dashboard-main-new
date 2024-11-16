@@ -98,28 +98,25 @@ div.loginForm{
  }
 
 
- button.Loginslide-btn {
-    padding: 5px 5px;
-    font-size: 16px;
-    color: #fff;
-    background: rgba(255, 255, 255, 0.1); /* Transparent background */
-    backdrop-filter: blur(10px); /* Blur effect */
-    border: 1px solid rgba(255, 255, 255, 0.3); /* Semi-transparent border */
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    width: 130px; /* Set fixed width */
-    text-align: center; /* Center the text */
-}
+button.signIn{
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 10px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            text-align: center;
+        }
+
+        button.signIn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
 
 
-
-
-/* Hover effect */
-button.Loginslide-btn:hover {
-    background: rgba(255, 255, 255, 0.2);
-    transform: scale(1.05);
-}
 
 
 div.loginDesc {
@@ -238,7 +235,7 @@ div.loginNav{
                                             </label>
                                         </div>
                        
-                                        <div class="row mt-1">
+                                        <div class="row mt-2">
                                             <div class="col-lg-12 d-flex justify-content-center">
                                                 @if (Route::has('password.request'))
                                                     <a class="underline text-sm text-white hover:text-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
@@ -249,8 +246,10 @@ div.loginNav{
                                         </div>
                        
                                         <div class="row mt-3">
-                                            <div class="col-lg-12 d-flex justify-content-end">
-                                                <button type="submit" class="btn btn-primary">Sign in</button>
+                                            <div class="col-lg-4"></div>
+                                            <div class="col-lg-4"></div>
+                                            <div class="col-lg-4 d-flex justify-content-end">
+                                                <button type="submit" class="signIn">Sign in</button>
                                             </div>
                                         </div>
                                     </form>
