@@ -71,31 +71,8 @@
 
 div.loginForm{
     backdrop-filter: blur(20px);
-    border-radius:10px;
+    border-radius:20px;
 }
-.active-toggle {
-    background-color:#fff;
-}
-.hidden {
-    display: none;
-}
- img.uddesignLogo{
-    width: 70px;
-    height: 70px;
- }
-
-
- img.kuwagoLogo{
-    width: 70px;
-    height: 70px;
- }
-
-
- img.loginImages{
-    width: 180px;
-    height: 125px;
-    border-radius: 10px;
- }
 
 
 button.signIn{
@@ -116,33 +93,50 @@ button.signIn{
             box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
         }
 
+        
+    .form-group {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px; /* Space between fields */
+    }
+
+    .form-group label {
+        margin-right: 20px; /* Adjust spacing between label and input */
+        color: #fff;
+        white-space: nowrap; /* Prevent label text from wrapping */
+    }
+
+    .form-group input {
+        background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+            padding: 10px;
+            width: 100%;
+            outline: none;
+            transition: all 0.3s ease;
+    }
+    .form-group input:focus{
+        background: rgba(255, 255, 255, 0.2);
+            outline: none;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); /* Add a glow effect */
+    background: rgba(255, 255, 255, 0.2); /* Ensure the background matches your style */
+    color: #fff;
+    }
+
+    .form-group button {
+        position: absolute;
+        right: 5px;
+        background: none;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+        font-size: 16px;
+    }
 
 
 
-div.loginDesc {
-    height: 50px; /* Set your preferred height */
-    overflow-y: scroll;
-    scrollbar-width: none; /* Firefox */
-}
 
-
-div.loginDesc::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, and Edge */
-}
-
-
-div.loginNav{
-    cursor: pointer;
-    transition: background 0.3s;
-    max-width: 150px;
-}
-.active-toggle {
-    background: rgba(255, 255, 255, 0.3);
-    color: #000; /* Optional: Adjust text color for better contrast */
-    border-radius: 8px; /* Optional: Add styling as needed */
-    font-weight: bold; /* Emphasize active item */
-   
-}
 
     </style>
 </head>
@@ -154,43 +148,25 @@ div.loginNav{
                 <div class="col-lg-8">
                     <div class="container loginForm" style="padding: 20px;">
                         <div class="row d-flex justify-content-around">
-                            <div class="col-lg-3 d-flex justify-content-center loginNav" onclick="showSection('signIn')">
-                                <h6 style="color: #fff;">Sign In</h6>
-                            </div>
-                            <div class="col-lg-3 d-flex justify-content-center loginNav" onclick="showSection('uddesign')">
-                                <h6 style="color: #fff;">Uddesign</h6>
-                            </div>
-                            <div class="col-lg-3 d-flex justify-content-center loginNav" onclick="showSection('kuwagoCafe1')">
-                                <h6 style="color: #fff;">Kuwago Cafe 1</h6>
-                            </div>
-                            <div class="col-lg-3 d-flex justify-content-center loginNav" onclick="showSection('kuwagoCafe2')">
-                                <h6 style="color: #fff;">Kuwago Cafe 2</h6>
+                            <div class="col-lg-12 mb-3 d-flex justify-content-center loginNav">
+                                <h1 style="color: #fff;">Sign In</h1>
                             </div>
                         </div>
 
 
                         <div id="signIn" class="section">
                             <div class="row">
-                                <div class="col-lg-12 mt-3 d-flex justify-content-center">
-                                    <h4 style="color: #fff;">Welcome Back!</h4>
-                                </div>
-                            </div>
-                       
-                            <div class="row">
                                 <div class="col-lg-1 mt-3"></div>
                                 <div class="col-lg-10 mt-3">
                                     <form method="POST" action="{{ route('login') }}">
                                         @csrf
-                                        <div class="form-group d-flex align-items-center position-relative">
-                                            <label for="email" style="margin-right: 38px; color: #fff; margin-bottom: -23px;">Email</label>
+                                        <div class="form-group position-relative">
+                                            <label for="email">Email</label>
                                             <input
                                                 type="email"
                                                 class="form-control"
                                                 id="email"
                                                 name="email"
-                                                aria-describedby="emailHelp"
-                                                placeholder="Enter email"
-                                                style="flex: 1; background: transparent; border: none; border-bottom: 2px solid #fff; color: #fff; outline: none; border-radius: 0; box-shadow: none; padding-right: 30px;"
                                                 value="{{ old('email') }}"
                                                 required
                                                 autofocus
@@ -199,34 +175,30 @@ div.loginNav{
                                             <button
                                                 type="button"
                                                 onclick="document.getElementById('email').value='';"
-                                                style="position: absolute; right: 5px; background: none; border: none; color: #fff; cursor: pointer; font-size: 16px;"
                                             >
                                                 &times;
                                             </button>
                                         </div>
-                                        <x-input-error :messages="$errors->get('email')" class="mt-2" />
+                                        <x-input-error :messages="$errors->get('email')" class="mt-2" style="color: #fff;" />
                                        
-                                        <div class="form-group d-flex align-items-center position-relative">
-                                            <label for="password" style="margin-right: 10px; color: #fff; margin-bottom: -23px;">Password</label>
-                                            <input
-                                                type="password"
-                                                class="form-control"
-                                                id="password"
-                                                name="password"
-                                                placeholder="Password"
-                                                style="flex: 1; background: transparent; border: none; border-bottom: 2px solid #fff; color: #fff; outline: none; border-radius: 0; box-shadow: none; padding-right: 30px;"
-                                                required
-                                                autocomplete="new-password"
-                                            />
-                                            <button
-                                                type="button"
-                                                onclick="document.getElementById('password').value='';"
-                                                style="position: absolute; right: 5px; background: none; border: none; color: #fff; cursor: pointer; font-size: 16px;"
-                                            >
-                                                &times;
-                                            </button>
-                                        </div>
-                                        <x-input-error :messages="$errors->get('password')" class="mt-2" />
+                                            <div class="form-group position-relative">
+                                                <label for="password">Password</label>
+                                                <input
+                                                    type="password"
+                                                    class="form-control"
+                                                    id="password"
+                                                    name="password"
+                                                    required
+                                                    autocomplete="new-password"
+                                                />
+                                                <button
+                                                    type="button"
+                                                    onclick="document.getElementById('password').value='';"
+                                                >
+                                                    &times;
+                                                </button>
+                                            </div>
+                                        <x-input-error :messages="$errors->get('password')" class="mt-2" style="color: #fff;" />
                                        
                                         <div class="block mt-4">
                                             <label for="remember_me" class="inline-flex items-center">
@@ -257,208 +229,6 @@ div.loginNav{
                                 <div class="col-lg-1 mt-3"></div>
                             </div>
                         </div>
-                       
-                       
-
-
-                        <div id="uddesign" class="section hidden mt-4">
-                            <div class="row">
-                                <div class="col-lg-1 "></div>
-                                <div class="col-lg-3 ">
-                                    <div class="col-lg-4 user-image" style="height:140px;">
-                                        <img src="/images/officeSample.jpg" alt="kuwago" class="loginImages">
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 ">
-                                    <div class="row">
-                                        <div class="col-lg-12">
-                                            <p style="color:#fff;">Year Established:</p>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-12">
-                                            <p style="color:#fff;">Business Type:</p>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-12">
-                                            <p style="color:#fff;">Location:</p>
-                                            <p style="color:#fff; font-size:15px;">2F LCA Bldg., Universidad de Dagupan, Arellano St., Dagupan, Pangasinan</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1  d-flex justify-content-center">
-                                    <img src="/images/uddesign.png" alt="kuwago" class="uddesignLogo">
-                                </div>
-                                <div class="col-lg-3 ">
-                                    <div class="row">
-                                        <div class="col-lg-12 mt-2 d-flex justify-content-end">
-                                            <button class="Loginslide-btn" onclick="navigateTo('next')">View Next</button>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-12 mt-2 d-flex justify-content-end">
-                                            <button class="Loginslide-btn" onclick="navigateTo('previous')">View Previous</button>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-12 mt-2 d-flex justify-content-end">
-                                            <button class="Loginslide-btn" onclick="showSection('signIn')">Go to Sign In</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 "></div>
-                            </div>
-                           
-                            <div class="row">
-                                <div class="col-lg-1"></div>
-                                <div class="col-lg-11">
-                                    <p style="color: #fff;">Description</p>
-                                </div>
-                            </div>
-                            <div class="row loginDesc">
-                                <div class="col-lg-1"></div>
-                                <div class="col-lg-9">
-                                    <p style="color: #fff;">Download the perfect office background pictures. Find over 100+ of the best free office background images. Free for commercial use ✓ No attribution required ...</p>
-                                </div>
-                                <div class="col-lg-2"></div>
-                            </div>
-                           
-                        </div>
-
-
-                        <div id="kuwagoCafe1" class="section hidden mt-4">
-                            <div class="row">
-                                <div class="col-lg-1 "></div>
-                                <div class="col-lg-3 ">
-                                    <div class="col-lg-4 user-image" style="height:140px;">
-                                        <img src="/images/kuwago1.jpg" alt="kuwago" class="loginImages">
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 ">
-                                    <div class="row">
-                                        <div class="col-lg-12">
-                                            <p style="color:#fff;">Year Established:</p>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-12">
-                                            <p style="color:#fff;">Business Type:</p>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-12">
-                                            <p style="color:#fff;">Location:</p>
-                                            <p style="color:#fff; font-size:15px;">2F LCA Bldg., Universidad de Dagupan, Arellano St., Dagupan, Pangasinan</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1  d-flex justify-content-center">
-                                    <img src="/images/kuwagologo.png" alt="kuwago" class="kuwagoLogo">
-                                </div>
-                                <div class="col-lg-3 ">
-                                    <div class="row">
-                                        <div class="col-lg-12 mt-2 d-flex justify-content-end">
-                                            <button class="Loginslide-btn" onclick="navigateTo('next')">View Next</button>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-12 mt-2 d-flex justify-content-end">
-                                            <button class="Loginslide-btn" onclick="navigateTo('previous')">View Previous</button>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-12 mt-2 d-flex justify-content-end">
-                                            <button class="Loginslide-btn" onclick="showSection('signIn')">Go to Sign In</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 "></div>
-                            </div>
-                           
-                            <div class="row">
-                                <div class="col-lg-1"></div>
-                                <div class="col-lg-11">
-                                    <p style="color: #fff;">Description</p>
-                                </div>
-                            </div>
-                            <div class="row loginDesc">
-                                <div class="col-lg-1"></div>
-                                <div class="col-lg-9">
-                                    <p style="color: #fff;">Download the perfect office background pictures. Find over 100+ of the best free office background images. Free for commercial use ✓ No attribution required ...</p>
-                                </div>
-                                <div class="col-lg-2"></div>
-                            </div>
-                           
-                        </div>
-
-
-                        <div id="kuwagoCafe2" class="section hidden mt-4">
-                            <div class="row">
-                                <div class="col-lg-1 "></div>
-                                <div class="col-lg-3 ">
-                                    <div class="col-lg-4 user-image" style="height:140px;">
-                                        <img src="/images/kuwago2.jpeg" alt="kuwago" class="loginImages">
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 ">
-                                    <div class="row">
-                                        <div class="col-lg-12">
-                                            <p style="color:#fff;">Year Established:</p>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-12">
-                                            <p style="color:#fff;">Business Type:</p>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-12">
-                                            <p style="color:#fff;">Location:</p>
-                                            <p style="color:#fff; font-size:15px;">2F LCA Bldg., Universidad de Dagupan, Arellano St., Dagupan, Pangasinan</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1  d-flex justify-content-center">
-                                    <img src="/images/kuwagologo.png" alt="kuwago" class="kuwagoLogo">
-                                </div>
-                                <div class="col-lg-3 ">
-                                    <div class="row">
-                                        <div class="col-lg-12 mt-2 d-flex justify-content-end">
-                                            <button class="Loginslide-btn" onclick="navigateTo('next')">View Next</button>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-12 mt-2 d-flex justify-content-end">
-                                            <button class="Loginslide-btn" onclick="navigateTo('previous')">View Previous</button>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-12 mt-2 d-flex justify-content-end">
-                                            <button class="Loginslide-btn" onclick="showSection('signIn')">Go to Sign In</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 "></div>
-                            </div>
-                           
-                            <div class="row">
-                                <div class="col-lg-1"></div>
-                                <div class="col-lg-11">
-                                    <p style="color: #fff;">Description</p>
-                                </div>
-                            </div>
-                            <div class="row loginDesc">
-                                <div class="col-lg-1"></div>
-                                <div class="col-lg-9">
-                                    <p style="color: #fff;">Download the perfect office background pictures. Find over 100+ of the best free office background images. Free for commercial use ✓ No attribution required ...</p>
-                                </div>
-                                <div class="col-lg-2"></div>
-                            </div>
-                           
-                        </div>
-
-
                     </div>
                 </div>
                 <div class="col-lg-2"></div>
@@ -466,66 +236,6 @@ div.loginNav{
         </div>
     </div>
 
-
-   <script>
-    function showSection(sectionId) {
-    // Hide all sections
-    const sections = document.querySelectorAll(".section");
-    sections.forEach((section) => {
-        section.classList.add("hidden");
-    });
-
-
-    // Remove active-toggle from all nav items
-    const navItems = document.querySelectorAll(".loginNav");
-    navItems.forEach((item) => {
-        item.classList.remove("active-toggle");
-    });
-
-
-    // Show the selected section
-    document.getElementById(sectionId).classList.remove("hidden");
-
-
-    // Find and highlight the active tab
-    const activeItem = Array.from(navItems).find(
-        (item) => item.textContent.trim().replace(/\s/g, "").toLowerCase() === sectionId.toLowerCase()
-    );
-    if (activeItem) {
-        activeItem.classList.add("active-toggle");
-    }
-
-
-    // Store the active section in localStorage
-    localStorage.setItem('activeSection', sectionId);
-}
-function navigateTo(direction) {
-    const sections = ['uddesign', 'kuwagoCafe1', 'kuwagoCafe2'];
-    const currentSectionId = localStorage.getItem('activeSection') || 'signIn';
-    const currentIndex = sections.indexOf(currentSectionId);
-   
-    let targetIndex;
-   
-    if (direction === 'next') {
-        targetIndex = currentIndex + 1 < sections.length ? currentIndex + 1 : currentIndex; // Prevent going out of bounds
-    } else if (direction === 'previous') {
-        targetIndex = currentIndex - 1 >= 0 ? currentIndex - 1 : currentIndex; // Prevent going out of bounds
-    }
-
-
-    if (targetIndex !== undefined) {
-        const targetSectionId = sections[targetIndex];
-        showSection(targetSectionId); // Navigate to the target section
-    }
-}
-
-
-// Store the active section in localStorage on navigation
-const activeSection = localStorage.getItem('activeSection') || 'signIn';
-showSection(activeSection);
-
-
-   </script>
 </body>
 </html>
 

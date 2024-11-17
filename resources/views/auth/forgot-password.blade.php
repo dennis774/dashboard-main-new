@@ -48,12 +48,12 @@
             min-height: 100vh; /* Ensures it covers the full viewport height */
         }
 
-        div.resetPassword{
+        div.forgotPassword{
             background: rgba(255, 255, 255, 0.1);
             border-radius: 20px;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
             border: 1px solid rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(25px);
+            backdrop-filter: blur(20px);
             padding: 30px;
             padding-top: 20px;
         }
@@ -99,7 +99,7 @@
             <div class="row">
                 <div class="col-lg-3"></div>
                 <div class="col-lg-6">
-                    <div class="container resetPassword">
+                    <div class="container forgotPassword">
                         <div class="row">
                             <div class="col-lg-12 d-flex justify-content-center">
                                 <div class="row">
@@ -130,7 +130,7 @@
     
                                     <!-- Email Address -->
                                     <div class="mb-4">
-                                        <label for="email" class="block text-gray-700 text-sm font-medium mb-2" style="color: #fff;">Email</label>
+                                        <label for="email" class="block text-gray-700 text-sm font-medium mb-2" style="color: #fff;"><strong>Email</strong></label>
                                         <input
                                             id="email"
                                             type="email"
